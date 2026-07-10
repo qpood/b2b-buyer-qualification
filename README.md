@@ -36,8 +36,35 @@ A structured buyer brief: verdict (score + priority + one-line reason), company 
 
 Bands: `80–100` Strong target · `65–79` Worth outreach · `50–64` Research more · `30–49` Low priority · `0–29` Avoid / verify carefully.
 
-### Load it with your agent
-Copy the folder `agent-skills/business/b2b-buyer-qualification/` into your project, then reference `SKILL.md`:
+### Install
+
+Pick one method:
+
+```bash
+# Clone into your project as a subfolder
+git clone https://github.com/qpood/b2b-buyer-qualification.git skills
+cp -r skills/agent-skills/ ./agent-skills/
+rm -rf skills
+```
+
+```bash
+# Clone and use directly (the repo is already a valid skill folder)
+git clone https://github.com/qpood/b2b-buyer-qualification.git
+```
+
+```bash
+# Download the folder only (no git history)
+# Requires `gh` CLI: gh auth login, then:
+gh repo clone qpood/b2b-buyer-qualification -- --depth=1
+cp -r b2b-buyer-qualification/agent-skills/ ./agent-skills/
+rm -rf b2b-buyer-qualification
+```
+
+```bash
+# Copy-paste: download the ZIP, then unzip and keep agent-skills/
+```
+
+After installing, reference `SKILL.md` from your agent:
 - **Codex**: load the `SKILL.md` before acting.
 - **Claude Code**: reference it from `CLAUDE.md`, copy into a Claude skills setup, or open `SKILL.md` as context.
 - **Cursor**: point Cursor rules / chat context at the folder.
@@ -74,6 +101,34 @@ See [`EXAMPLES.md`](agent-skills/business/b2b-buyer-qualification/EXAMPLES.md) f
 | 触达就绪 Outreach readiness | 15 |
 
 区间：`80–100` 强匹配 · `65–79` 值得开发 · `50–64` 先研究 · `30–49` 低优先级 · `0–29` 暂缓 / 验证。
+
+### 安装
+
+任选一种：
+
+```bash
+# 克隆到项目子目录
+git clone https://github.com/qpood/b2b-buyer-qualification.git skills
+cp -r skills/agent-skills/ ./agent-skills/
+rm -rf skills
+```
+
+```bash
+# 直接克隆使用（仓库本身就是一个合法的 skill 文件夹）
+git clone https://github.com/qpood/b2b-buyer-qualification.git
+```
+
+```bash
+# 只下载文件夹（不带 git 历史）
+# 需要 `gh` CLI：先 gh auth login，然后：
+gh repo clone qpood/b2b-buyer-qualification -- --depth=1
+cp -r b2b-buyer-qualification/agent-skills/ ./agent-skills/
+rm -rf b2b-buyer-qualification
+```
+
+```bash
+# 直接下载 ZIP：解压后保留 agent-skills/ 文件夹即可
+```
 
 ### 怎么用
 把 `agent-skills/business/b2b-buyer-qualification/` 整个文件夹复制到你的项目，然后在智能体里引用 `SKILL.md`：
